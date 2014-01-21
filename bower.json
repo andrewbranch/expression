@@ -1,0 +1,7 @@
+{
+  "name": "expression",
+  "version": "0.1.0",
+  "dependencies": {
+    "normalize-css": "~2.1.3"
+  }
+}
