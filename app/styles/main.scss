@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: $off-white;
+  background: url('../images/background-texture.png') $off-white repeat fixed;
   color: $warm-black;
   font: 1.4rem/1.4 $font-stack-serif;
   padding: 4rem;
@@ -61,6 +61,7 @@ header {
   }
   h2 {
     margin: 3.2rem 0 0;
+    &:last-child { margin-top: 2.2rem; }
   }
   #logo {
     img {
