@@ -4,15 +4,24 @@
 // BASE
 //
 
+@media (max-width: $screen-sm-max) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
 html {
-  font-size: 62.5%;
+  font-size: 50%;
+  @media (min-width: $screen-md) {
+    font-size: 62.5%;
+  }
 }
 
 body {
   background-color: $off-white;
   color: $warm-black;
   font: 1.4rem/1.4 $font-stack-serif;
-  padding: 25px;
+  padding: 4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
