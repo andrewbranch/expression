@@ -395,6 +395,7 @@ module.exports = function (grunt) {
         'uglify',
         'copy:dist',
         'rev',
+		'bower-install',
         'usemin',
         'htmlmin'
     ]);
