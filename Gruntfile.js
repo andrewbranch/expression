@@ -349,6 +349,15 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+        
+        buildcontrol: {
+            pages: {
+                options: {
+                    remote: 'git@github.com:andrewbranch/expression.git',
+                    branch: 'gh-pages'
+                }
+            }
         }
     });
 
