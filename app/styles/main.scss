@@ -19,9 +19,12 @@ html {
 
 body {
   background: url('../images/background-texture.png') $off-white repeat fixed;
+  text-rendering: optimizelegibility;
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  font-feature-settings:"liga", "dlig";
   color: $warm-black;
-  font: 1.4rem/1.4 $font-stack-serif;
-  padding: 4rem;
+  font: 2.4rem/1.46 $font-stack-serif;
+  padding: 4rem 10rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,6 +39,15 @@ h1, h2, h3, h4, h5, h6 {
   color: $intense-red;
 }
 
+a {
+  text-decoration: none;
+  color: $pleasant-red;
+  &:hover { color: lighten($pleasant-red, 10%); }
+}
+
+p {
+  margin: 0 0 1em 0;
+}
 
 //
 //  CONTEXT-SPECIFIC
@@ -73,5 +85,16 @@ header {
     max-width: 528px;
     background-image: url('../images/logo.png');
     background-size: cover;
+  }
+}
+
+main {
+  margin: 15rem auto 0;
+  //border-top: 4px solid darken($intense-red, 10%);
+  padding: 5rem 0 5rem;
+  max-width: 72rem;
+  h2 {
+    margin: 2.4em 0 .3em;
+    letter-spacing: .05em;
   }
 }
