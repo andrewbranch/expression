@@ -10,6 +10,12 @@
   }
 }
 
+@media (min-width: $screen-sm) {
+  .visible-xs {
+    display: none;
+  }
+}
+
 html {
   font-size: 50%;
   @media (min-width: $screen-md) {
@@ -87,7 +93,12 @@ header {
   }
   h2 {
     margin: 3.2rem 0 0;
-    &:last-child { margin-top: 2.2rem; }
+    &:last-child {
+      margin-top: 4rem;
+      @media (min-width: $screen-sm) {
+        margin-top: 2.2rem;
+      }
+    }
   }
   #logo {
     img {
