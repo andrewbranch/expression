@@ -24,7 +24,7 @@ body {
   font-feature-settings:"liga", "dlig";
   color: $warm-black;
   font: 2.4rem/1.46 $font-stack-serif;
-  padding: 3rem;
+  padding: 2rem;
   @media (min-width: $screen-sm) { padding: 4rem; }
 }
 
@@ -49,6 +49,19 @@ a {
 p {
   margin: 0 0 1em 0;
 }
+
+.figure {
+  margin: 6rem 0;
+  text-align: center;
+  .img-container {
+    display: table;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+  
 
 //
 //  CONTEXT-SPECIFIC
@@ -82,9 +95,9 @@ header {
       visibility: hidden;
     }
     display: inline-block;
-    width: 30rem;
-    max-width: 528px;
-    background-image: url('../images/logo.png');
+    width: 100%;
+    max-width: 400px;
+    background-image: url('../images/logo@2x.png');
     background-size: cover;
   }
 }
@@ -99,3 +112,15 @@ main {
     letter-spacing: .05em;
   }
 }
+
+#figure-es {
+  background-image: url('../images/es-diagram@2x.png');
+  background-size: cover;
+  img {
+    visibility: hidden;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+  }
+}
+    
