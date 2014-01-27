@@ -416,7 +416,6 @@ module.exports = function (grunt) {
         'rev',
 		'bower-install',
         'usemin',
-        'htmlmin'
     ]);
 
     grunt.registerTask('default', [
