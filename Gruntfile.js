@@ -274,7 +274,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     collapseBooleanAttributes: true,
-                    collapseWhitespace: true,
+                    //collapseWhitespace: true,
                     removeAttributeQuotes: true,
                     removeCommentsFromCDATA: true,
                     removeEmptyAttributes: true,
@@ -311,7 +311,8 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'audio/{,*/}*.*'
                     ]
                 }]
             },
@@ -415,7 +416,7 @@ module.exports = function (grunt) {
         'copy:dist',
         'rev',
 		'bower-install',
-        'usemin',
+        'usemin'
     ]);
 
     grunt.registerTask('default', [
