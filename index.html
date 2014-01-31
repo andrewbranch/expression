@@ -16,7 +16,7 @@
             
         <link rel="stylesheet" href="styles/66961048.vendor.css"/>
 
-        <link rel="stylesheet" href="styles/ed0f05d5.main.css"/>
+        <link rel="stylesheet" href="styles/3997d821.main.css"/>
         
         <script type="text/javascript" src="//use.typekit.net/xbi0dzh.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -52,10 +52,11 @@
           </section>
           <section>
             <h2>Background</h2>
+            <h3>January 24, 2014</h3>
             <p>
               I am very lucky to have a beautiful 2010 <a href="http://www.taylorguitars.com/guitars/acoustic/614ce">Taylor 614ce</a>. At that time, the 400 series and everything above shipped with a magnetic pickup and preamplification system, christened the <a href="http://www.taylorguitars.com/guitars/acoustic/features/Electronics/Expression-System">Taylor Expression System&reg;</a> (ES). Taylor made it out to be a really big deal, claiming incredible improvements in tone and natural acoustical character over the ubiquitous piezoelectric under-saddle transducer (UST).
             </p>
-            <div class="figure figure-transparent"><div class="img-container" id="figure-es"><img src="images/74464add.es-diagram@2x.png"></div></div>
+            <figure class="figure-transparent"><div class="img-container" id="figure-es"><img src="images/74464add.es-diagram@2x.png"></div></figure>
             <p>
               The Expression System <em>is</em> very different, to say the least. It consists of three magnetic pickups: two little round guys on the underside of the body, and one longish one underneath the neck. Most of the volume comes from the neck pickup; in fact, you can reach inside the soundhole and flip little switches on the preamp board and turn off the body pickups entirely. Their contribution to the sound, or lack thereof, makes a relatively subtle tonal difference.
             </p>
@@ -73,6 +74,27 @@
               <source src="audio/es-vs-sm81-strumming.wav" type="audio/wav">
               <p>Your browser does not support HTML5 audio playback. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             </audio>
+            <p>
+              So, in 2012, I decided to install a traditional UST in my guitar. However, I wanted to continue to be able to use the tastefully discrete volume and equilization knobs already on my guitar. I decided I would splice the UST signal into the same input as the neck input&rsquo;s signal, also allowing me to continue using the old pickups alongside (or instead of) the new piezo transducer if I so wished. After trying this with virtually inaudible results, a little research told me that piezo pickups have extraordinarily high output impedance. This essentially meant that the preamp I was splicing my signal into was specifically tailored to work efficiently with those magnetic pickups, and the electrical charateristics of the UST were too far outside the range of what the preamp could handle.
+            </p>
+            <p>
+              To make the UST work with the existing preamp, I had to lower its output impedance by a huge factor. I did this by adding another small circuit board containing a simple <a href="http://en.wikipedia.org/wiki/Buffer_amplifier#Voltage_buffer">voltage follower amplifier</a> to the innards of my guitar. The only place I could put it reliably was way down by the output jack and battery compartment. By this point, the number of wires running back and forth in the guitar had grown considerably, while the frustrating tedium of constantly having to blindly reach my hands at strange angles inside the soundhole had taken a serious toll on the neatness and precision of my work.
+            </p>
+            <figure class="figure-photo">
+              <div class="img-container" id="figure-old-board"><img src="images/d8bce5b7.old-board.jpg"></div>
+              <figcaption>My original buffer amplifier board, with hardware switches for different pickup combinations.</figcaption>
+            </figure>
+            <p>Long story short, to my surprise, it worked quite nicely for several months. But eventually, after all the vibration and jostling around that comes with regularly transporting and playing an instrument, the whole system shorted out and my acoustic-electric guitar became just acoustic for a few years.</p>
+          </section>
+          <section>
+            <h2>A Tribute to Mr. Hickson <a class="icon-link" href="http://en.wikipedia.org/wiki/William_Edward_Hickson"></a></h2>
+            <h3>January 30, 2014</h3>
+            <p>
+              Not to be defeated by my previous failure, my objective now is to redesign and reimplement the system I almost succeeded in building back in 2012, with a significant addition: a <a href="http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx">Bluetooth&reg; Low-Energy</a> microcontroller that will allow me to mix the sound of the neck, body, and under-saddle pickups <em>with my phone</em>.
+            </p>
+            <p>
+              If you&rsquo;re interested, you can <a href="docs/8742ce62.proposal.pdf">read my official project proposal</a>.
+            </p>
           </section>
         </main>
         
