@@ -16,7 +16,7 @@
             
         <link rel="stylesheet" href="styles/66961048.vendor.css"/>
 
-        <link rel="stylesheet" href="styles/3997d821.main.css"/>
+        <link rel="stylesheet" href="styles/0a9dc874.main.css"/>
         
         <script type="text/javascript" src="//use.typekit.net/xbi0dzh.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -44,10 +44,10 @@
           <section>
             <h2>What?</h2>
             <p>
-              My name is Andrew. I&rsquo;m a web designer/developer, a musician, and, at the time of this writing, an electrical engineering student at <a href="http://www.auburn.edu">Auburn University</a>. I&rsquo;m currently working on a design project in which I&rsquo;m making some very cool additions to the electronics of my acoustic guitar. As I make progress, I&rsquo;ll add media and documentation here. You&rsquo;ll find video and audio clips, photos and figures, and moderately technical exposition, as well as links to the more formal documentation that the course requires.
+              My name is Andrew. I&rsquo;m a web designer/developer, a <a href="http://andrewbranch.bandcamp.com">musician</a>, and, at the time of this writing, an electrical engineering student at <a href="http://www.auburn.edu">Auburn University</a>. I&rsquo;m currently working on a design project in which I&rsquo;m making some very cool additions to the electronics of my acoustic guitar. As I progress, I&rsquo;ll add media and documentation here. You&rsquo;ll find video and audio clips, photos and figures, and moderately technical exposition, as well as links to the more formal documentation that the course requires.
             </p>
             <p>
-              Unlike a traditional blog, I&rsquo;ll put my newest material at the bottom of the page so that when I&rsquo;m done, readers will be able to start at the beginning and read forward to get a full understanding of the process. Think of this as a book. A New York Times best-seller, perhaps.
+              Unlike a traditional blog, I&rsquo;ll put my newest material at the bottom of the page so that when I&rsquo;m done, readers will be able to start at the beginning and read forward to get a full understanding of the process. Think of this as a book. A <i>New York Times</i> best-seller, perhaps.
             </p>
           </section>
           <section>
@@ -81,20 +81,87 @@
               To make the UST work with the existing preamp, I had to lower its output impedance by a huge factor. I did this by adding another small circuit board containing a simple <a href="http://en.wikipedia.org/wiki/Buffer_amplifier#Voltage_buffer">voltage follower amplifier</a> to the innards of my guitar. The only place I could put it reliably was way down by the output jack and battery compartment. By this point, the number of wires running back and forth in the guitar had grown considerably, while the frustrating tedium of constantly having to blindly reach my hands at strange angles inside the soundhole had taken a serious toll on the neatness and precision of my work.
             </p>
             <figure class="figure-photo">
-              <div class="img-container" id="figure-old-board"><img src="images/d8bce5b7.old-board.jpg"></div>
-              <figcaption>My original buffer amplifier board, with hardware switches for different pickup combinations.</figcaption>
+              <div class="img-container" id="figure-old-board"><img src="images/d8bce5b7.old-board.jpg" alt="My old buffer amplifier board, with hardware switches for different pickup combinations."></div>
+              <figcaption>My old buffer amplifier board, with hardware switches for different pickup combinations.</figcaption>
             </figure>
             <p>Long story short, to my surprise, it worked quite nicely for several months. But eventually, after all the vibration and jostling around that comes with regularly transporting and playing an instrument, the whole system shorted out and my acoustic-electric guitar became just acoustic for a few years.</p>
           </section>
+          
           <section>
             <h2>A Tribute to Mr. Hickson <a class="icon-link" href="http://en.wikipedia.org/wiki/William_Edward_Hickson"></a></h2>
             <h3>January 30, 2014</h3>
             <p>
-              Not to be defeated by my previous failure, my objective now is to redesign and reimplement the system I almost succeeded in building back in 2012, with a significant addition: a <a href="http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx">Bluetooth&reg; Low-Energy</a> microcontroller that will allow me to mix the sound of the neck, body, and under-saddle pickups <em>with my phone</em>.
+              Not to be defeated by my previous failure, my objective now is to redesign and reimplement the system I almost succeeded in building back in 2012, with a significant addition: a <a href="http://www.bluetooth.com/Pages/Bluetooth-Smart.aspx">Bluetooth&reg; Low-Energy</a> microcontroller that will allow me to switch between the neck, body, and under-saddle pickups <em>with my phone</em>.
             </p>
             <p>
               If you&rsquo;re interested, you can <a href="docs/8742ce62.proposal.pdf">read my official project proposal</a>.
             </p>
+          </section>
+          
+          <section>
+              <h2>Sound Design</h2>
+              <h3>April 25, 2014</h3>
+              <p>
+                  Well, I dropped the ball on updating this as I went along, but I'm going to attempt to recover some ground here.
+              </p>
+              <p>
+                  The first part of designing my modification I had to tackle was the buffer amp for the UST. I picked a high-quality op amp, the <a href="http://www.analog.com/en/all-operational-amplifiers-op-amps/operational-amplifiers-op-amps/ad843/products/product.html">AD843</a>, based on the <a href="http://tangentsoft.net/audio/opamps.html">detailed comparison</a> from Warren Young, and began prototyping.
+              </p>
+              <p>
+                Before I could test any of my designs, though, I had to do some grunt work to be able to access the inputs and outputs of the guitar&rsquo;s electronics that I needed. Back in 2012, I really half-assed this step, and it made the rest of the project a nightmare. This is what a nightmare looks like:
+              </p>
+              <figure class="figure-photo">
+                <div class="img-container" id="figure-old-setup"><img src="images/b751d5ff.old-setup.jpg" alt="My old development setup: a tangle of short wires coming out of the guitar and terminating at a breadboard that sits on top of the body of the guitar."></div>
+                <figcaption>My old development setup. Not very convenient.</figcaption>
+              </figure>
+              <p>
+                So this time around, I drilled a quick board to intercept all the important lines and brought them outside of the guitar in a neat, six-foot bundle of wires.
+              </p>
+              <figure class="figure-photo">
+                <div class="img-container" id="figure-dev-board"><img src="images/f2279dce.dev-board.jpg" alt="My quick PCB to make development easier by intercepting signal lines."></div>
+                <figcaption>My quick PCB to make development easier by intercepting signal lines.</figcaption>
+              </figure>
+              <p>
+                With that board installed, I could hash out my amplifier circuit on a breadboard at a comfortable distance away.
+              </p>
+              <figure class="figure-photo">
+                <div class="img-container" id="figure-new-setup"><img src="images/14493bc5.new-setup.jpg" alt="My new development setup: the neat bundle of wires exits my guitar that lays on my bed, and terminates at a breadboard sitting on my desk."></div>
+                <figcaption>Turns out sitting at a desk is much more comfortable.</figcaption>
+              </figure>
+              <p>
+                After some experimentation, I ended up with a simple inverting amplifier with an active low-pass filter to get rid of a lot of scratchy, screechy high-frequency energy from the piezo. Since everything has to run off the guitar&rsquo;s single 9-volt battery, I had to bias the non-inverting input of the op amp at somewhere around 4.5 V. A 100k&Omega;/100k&Omega; resistor divider would do alright, except that the high impedance seen there would kill the low-frequency response. At the same time, a low-valued resistor divider would waste a lot of power. But I like to have my cake and eat it too, so I put the 100k&Omega; divider in front of a single-transistor voltage follower, which has a very low output impedance without sinking a lot of current.
+              </p>
+              <figure class="figure-photo">
+                <div class="img-container" id="figure-biasing"><img src="images/5d2b50bd.biasing.jpg" alt="Biasing circuit schematic, written on my freezer door"></div>
+                <figcaption>My whiteboard doubles as a freezer.</figcaption>
+              </figure>
+              <p>
+                Everything worked and sounded pretty good, but there was a disturbing amount of hiss and hum permeating the system. A breadboard is already a harsh environment for any system to operate, so knowing that I was running a low-impedance amplifier output back across the room on a 6-foot 20 AWG wire made me approach that unwanted noise with a grain of salt. I decided to make a PCB for my circuit so far and see how it performed inside the guitar.
+              </p>
+              <figure class="figure-photo">
+                <div class="img-container" id="figure-etching"><img src="images/417c87c3.etching.jpg" alt="PCB in etching chemicals, almost done"></div>
+                <figcaption>The last bit of copper being etched away from my amplifier PCB</figcaption>
+              </figure>
+              <p>
+                After a few hours, a few fluid ounces of hydrochloric acid, one really tiny drill bit, and a handful solder joints, I had this guy:
+              </p>
+              <figure class="figure-photo">
+                <div class="img-container" id="figure-amp-board"><img src="images/a54aa77e.amp-board.jpg" alt="Assembled amplifier PCB"></div>
+              </figure>
+              <p>
+                I installed him into the guitar, employing a highly sophisticated mounting strategy,
+                <figure class="figure-photo">
+                  <div class="img-container" id="figure-amp-board-mounting"><img src="images/3f612218.amp-board-mounting.jpg" alt="Amplifier PCB rubber-banded to ES PCB"></div>
+                </figure>
+                and tried it out. I was thrilled to find that the noise floor was way down, pretty much inaudible at normal levels. Here&rsquo;s an audio sample:
+              </p>
+              
+              <audio preload="auto" controls>
+                <source src="audio/expression-prototype.mp3" type="audio/mpeg">
+                <source src="audio/expression-prototype.wav" type="audio/wav">
+                <p>Your browser does not support HTML5 audio playback. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+              </audio>
+              
           </section>
         </main>
         
