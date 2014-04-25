@@ -81,6 +81,8 @@ figure {
     padding: $img-padding;
     border: $img-border-width solid $light-gray;
     box-sizing: border-box;
+    width: 100%;
+    max-width: 500px + 2 * $img-padding + 2 * $img-border-width;
   }
 }
   
@@ -168,9 +170,9 @@ audio {
   margin-bottom: 1.4em;
 }
 
-#figure-old-board {
-  img {
-    width: 100%;
-    max-width: 500px + 2 * $img-padding + 2 * $img-border-width;
-  }
-}
+//.figure-photo {
+//  img {
+//    width: 100%;
+//    max-width: 500px + 2 * $img-padding + 2 * $img-border-width;
+//  }
+//}
